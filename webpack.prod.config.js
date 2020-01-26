@@ -1,33 +1,23 @@
 const  webpack = require('webpack');
 const moduleConfig = require('./module.config');
-const resolveConfig = require('./resolve.config');
 const WebpackBar = require('webpackbar');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const path = require('path');
 
 module.exports = {
     devtool: '', // Removed dev-tools mapping
+    mode: "production",
     entry: ['./src/index.js'],
-    resolve:resolveConfig,
     output: {
-        filename: '[name].min.js',
-        path: '/srv/www/nhfp_project_elections/public/static/js/',
-        publicPath: '/static/js/'
+        filename: "bundle.js",
+        path: path.resolve(__dirname, 'dist')
     },
     plugins:[
-        new webpack.DefinePlugin({
-            'process.env.ENV': JSON.stringify('production'),
-            'process.env.API_URL': JSON.stringify("/api/"),
-        }),
         new WebpackBar(),
         new WebpackNotifierPlugin()
     ],
     performance: {
         hints: false
-    },
-    optimization: {
-        splitChunks: {
-            chunks: 'all'
-        }
     },
     module:moduleConfig
 };

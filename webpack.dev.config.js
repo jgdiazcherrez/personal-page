@@ -9,9 +9,8 @@ const port = 10000;
 
 
 module.exports = {
-    devtool: 'source-map',
+    devtool: 'cheap-module-eval-source-map',
     entry: [
-        //'react-hot-loader/patch',
         `webpack-dev-server/client?http://${host}:${port}`,
         'webpack/hot/only-dev-server',
         './src/index.js'
@@ -23,8 +22,8 @@ module.exports = {
         publicPath: `http://${host}:${port}/`
     },
     plugins:[
-        new WebpackNotifierPlugin(),
-        new webpack.NamedModulesPlugin()
+        //new WebpackNotifierPlugin(),
+        //new webpack.NamedModulesPlugin()
     ],
     devServer: {
         contentBase: path.resolve(__dirname, "dist"),
@@ -34,6 +33,7 @@ module.exports = {
             errors: true,
             warnings: true
         },
+        historyApiFallback: true,
         hot:true,
         disableHostCheck: true,
         stats: {
