@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "El Español",
+    "position": "Team Leader/Software Engineer",
+    "image": "/img/company/ElEspanol.jpg",
+    "url": "https://www.elespanol.com",
+    "shortDescription": ""
+  },
+  {
+    "id": 2,
+    "name": "El Confidencial",
+    "position": "Full Stack Developer",
+    "image": "/img/company/ElConfidencial.jpg",
+    "url": "https://www.elespanol.com",
+    "shortDescription": ""
+  },
+  {
+    "id": 3,
+    "name": "Freelance/ThinkingSize",
+    "position": "Full Stack Developer",
+    "image": "/img/company/tkz.jpg",
+    "url": "#",
+    "shortDescription": ""
+  },
+  {
+    "id": 4,
+    "name": "El Español",
+    "position": "Full Stack Developer",
+    "image": "/img/company/ElEspanol_2.jpg",
+    "url": "https://www.elespanol.com",
+    "shortDescription": ""
+  },
+  {
+    "id": 5,
+    "name": "Alten/Prisa",
+    "position": "Developer",
+    "image": "/img/company/Alten_PRisa.jpg",
+    "url": "https://www.alten.es",
+    "shortDescription": ""
+  }
+]

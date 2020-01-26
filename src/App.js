@@ -2,22 +2,24 @@ import React from 'react';
 import { createMuiTheme } from '@material-ui/core/styles';
 import ConfigRoute from './ConfigRoute'
 import {MuiThemeProvider} from "@material-ui/core/styles";
-import {BrowserRouter as Router, Route} from 'react-router-dom'
-import Home from './views/home';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Home from './views/Home';
+import {Provider} from 'react-redux'
+import configureStore from './store/configureStore'
+import PortFolioIndex from "./views/Portfolio";
+import TechIndex from "./views/Tech";
+
+let store = configureStore();
+
+
 
 const theme = createMuiTheme({
     palette: {
         primary: {
             // light: will be calculated from palette.primary.main,
-            main: '#ffffff',
+            main: '#f7f7f7',
             // dark: will be calculated from palette.primary.main,
             // contrastText: will be calculated to contrast with palette.primary.main
-        },
-        secondary: {
-            light: '#0066ff',
-            main: '#0044ff',
-            // dark: will be calculated from palette.secondary.main,
-            contrastText: '#ffcc00'
         },
         // Used by `getContrastText()` to maximize the contrast between
         // the background and the text.
@@ -31,21 +33,28 @@ const theme = createMuiTheme({
 
 
 const App = () => (
-    <MuiThemeProvider theme={theme}>
-        <Router>
-            <div>
-                {
-                    (() => {
-                        /* if (process.env.NODE_ENV === 'development') {
-                             const DevTools = require('./containers/DevTools').default;
-                             return <DevTools/>
-                         }*/
-                    })()
-                }
-                <Route exact path={ConfigRoute.root} component={Home}/>
-            </div>
-        </Router>
-    </MuiThemeProvider>
+    <Provider store={store}>
+        <MuiThemeProvider theme={theme}>
+            <Router>
+
+                    {
+                        (() => {
+                            if (process.env.NODE_ENV === 'development') {
+                                 const DevTools = require('./dev/DevTools').default;
+                                 return <DevTools/>
+                             }
+                        })()
+                    }
+
+                <Switch>
+                    <Route exact path={ConfigRoute.root.path} render={() => <Home/>}/>
+                    <Route path={ConfigRoute.portFolio.path} render={() => <PortFolioIndex/>}/>
+                    <Route path={ConfigRoute.tech.path} render={() => <TechIndex/>}/>/}
+                </Switch>
+            </Router>
+        </MuiThemeProvider>
+    </Provider>
+
 );
 
 export default App;
