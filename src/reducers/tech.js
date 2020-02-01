@@ -1,20 +1,19 @@
 
 import type from '../constants/actions/tech';
 
-const _initialState = () => ({
-    list: [],
-    load: false
+const initialState = () => ({
+  list: []
 });
 
-const _setTechList = (state, {list, load}) => ({...state, list, load});
+const setTechList = (state, { list }) => ({ ...state, list });
 
-export default (state = _initialState(), action) => {
-    switch (action.type) {
-        case type.FETCH_LIST_TECH_REQUEST:
-        case type.FETCH_LIST_TECH_REQUEST_ERROR:
-        case type.FETCH_LIST_TECH_REQUEST_SUCCESS:
-            return _setTechList(state, action);
-        default:
-            return state;
-    }
+export default (state = initialState(), action) => {
+  switch (action.type) {
+    case type.FETCH_LIST_TECH_REQUEST:
+    case type.FETCH_LIST_TECH_REQUEST_ERROR:
+    case type.FETCH_LIST_TECH_REQUEST_SUCCESS:
+      return setTechList(state, action);
+    default:
+      return state;
+  }
 };
