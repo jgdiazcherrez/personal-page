@@ -17,16 +17,14 @@ module.exports = {
   ],
   output: {
     // filename: '[name].min.js',
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: './dist/bundle.js',
     publicPath: `http://${host}:${port}/`
   },
   plugins: [
-    // new WebpackNotifierPlugin(),
-    // new webpack.NamedModulesPlugin()
+    new WebpackNotifierPlugin()
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
+    // contentBase: path.resolve(__dirname, '/'),
     port,
     host,
     overlay: {
