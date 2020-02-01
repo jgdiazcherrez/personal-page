@@ -11,8 +11,7 @@ const fetchListRequest = () => (
 
 const fetListRequestSuccess = (data) => ({
   type: ACTION.FETCH_LIST_TECH_REQUEST_SUCCESS,
-  list: data,
-  load: true
+  list: data
 });
 
 const fetchListRequestError = () => (

@@ -2,6 +2,7 @@
 // selected prop will be passed
 
 import React from 'react';
+import useStyles from './styleSliderMenuItem';
 
 const ChildrenMenuItem = ({ srcImage, url }) => {
   // eslint-disable-next-line jsx-a11y/alt-text
@@ -13,13 +14,16 @@ const ChildrenMenuItem = ({ srcImage, url }) => {
   );
 };
 
-const MenuItem = ({ srcImage, selected, url }) => (
-  <div
-    className={`menu-item ${selected ? 'active' : ''}`}
-  >
-    <ChildrenMenuItem srcImage={srcImage} url={url} />
-  </div>
-);
+const MenuItem = ({ srcImage, selected, url }) => {
+  const classes = useStyles();
+  return (
+    <div
+      className={classes.menuItem}
+    >
+      <ChildrenMenuItem srcImage={srcImage} url={url} />
+    </div>
+  );
+};
 
 const Arrow = ({ text, className }) => (
   <div
