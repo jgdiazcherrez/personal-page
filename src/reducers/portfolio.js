@@ -1,20 +1,19 @@
 
 import type from '../constants/actions/portfolio';
 
-const _initialState = () => ({
-    list: [],
-    load: false
+const initialState = () => ({
+  list: []
 });
 
-const _setListPortfolio = (state, {list, load}) => ({...state, list, load});
+const setListPortfolio = (state, { list }) => ({ ...state, list });
 
-export default (state = _initialState(), action) => {
-    switch (action.type) {
-        case type.FETCH_LIST_PORTFOLIO_REQUEST:
-        case type.FETCH_LIST_PORTFOLIO_REQUEST_SUCCESS:
-        case type.FETCH_LIST_PORTFOLIO_REQUEST_ERROR:
-            return _setListPortfolio(state, action);
-        default:
-            return state;
-    }
+export default (state = initialState(), action) => {
+  switch (action.type) {
+    case type.FETCH_LIST_PORTFOLIO_REQUEST:
+    case type.FETCH_LIST_PORTFOLIO_REQUEST_SUCCESS:
+    case type.FETCH_LIST_PORTFOLIO_REQUEST_ERROR:
+      return setListPortfolio(state, action);
+    default:
+      return state;
+  }
 };
