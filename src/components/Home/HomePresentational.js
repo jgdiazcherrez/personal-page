@@ -16,7 +16,7 @@ const HomePresentational = () => {
           <Grid item xs={12}>
             <section spacing={3}>
               <Typography component="h1" variant="h2" gutterBottom className={classes.title}>Jonathan Díaz</Typography>
-              <img src="/img/profile.jpeg" className={classes.imgProfile} alt="me" />
+              <img src="./img/profile.jpeg" className={classes.imgProfile} alt="me" />
               <Typography variant="h6" gutterBottom> Full Stack Engineer </Typography>
               <div className={classes.socialContainer}>
                 <SocialPresentational />
