@@ -4,15 +4,15 @@
     "spanishText": "Lenguajes de programación",
     "items": [
       {
-        "image": "/img/language/javascript.png"
+        "image": "./img/language/javascript.png"
       },
       {
         "url": "https://www.php.net/",
-        "image": "/img/language/php.png"
+        "image": "./img/language/php.png"
       },
       {
         "url": "https://www.lua.org/",
-        "image": "/img/language/lua.png"
+        "image": "./img/language/lua.png"
       }
     ]
   },
@@ -22,11 +22,11 @@
     "items": [
       {
         "url": "https://www.nginx.com/",
-        "image": "/img/server/nginx.png"
+        "image": "./img/server/nginx.png"
       },
       {
         "url": "https://varnish-cache.org/",
-        "image": "/img/server/varnish.png"
+        "image": "./img/server/varnish.png"
       }
     ]
   },
@@ -36,27 +36,27 @@
     "items": [
       {
         "url": "https://reactjs.org/",
-        "image": "/img/front/react.png"
+        "image": "./img/front/react.png"
       },
       {
         "url": "https://redux.js.org/",
-        "image": "/img/front/redux.png"
+        "image": "./img/front/redux.png"
       },
       {
         "url": "https://babeljs.io/",
-        "image": "/img/front/babel.png"
+        "image": "./img/front/babel.png"
       },
       {
         "url": "https://webpack.js.org/",
-        "image": "/img/front/webpack.png"
+        "image": "./img/front/webpack.png"
       },
       {
 
-        "image": "/img/front/html5_css3.png"
+        "image": "./img/front/html5_css3.png"
       },
       {
         "url": "https://jquery.com/",
-        "image": "/img/front/jquery.png"
+        "image": "./img/front/jquery.png"
       }
     ]
   },
@@ -66,15 +66,15 @@
     "items": [
       {
         "url": "https://nodejs.org/",
-        "image": "/img/back/nodejs.png"
+        "image": "./img/back/nodejs.png"
       },
       {
         "url": "https://phalcon.io/",
-        "image": "/img/back/phalcon.png"
+        "image": "./img/back/phalcon.png"
       },
       {
         "url": "https://symfony.com/",
-        "image": "/img/back/symfony.png"
+        "image": "./img/back/symfony.png"
       }
     ]
   },
@@ -84,23 +84,23 @@
     "items": [
       {
         "url": "https://www.couchbase.com/",
-        "image": "/img/database/couchbase.png"
+        "image": "./img/database/couchbase.png"
       },
       {
         "url": "https://elastic.co/",
-        "image": "/img/database/elasticsearch.png"
+        "image": "./img/database/elasticsearch.png"
       },
       {
         "url": "https://www.mysql.com/",
-        "image": "/img/database/mysql.png"
+        "image": "./img/database/mysql.png"
       },
       {
         "url": "https://memcached.org/",
-        "image": "/img/database/memcached.png"
+        "image": "./img/database/memcached.png"
       },
       {
         "url": "https://redis.io/",
-        "image": "/img/database/redis.png"
+        "image": "./img/database/redis.png"
       }
     ]
   }

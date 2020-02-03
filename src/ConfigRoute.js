@@ -1,19 +1,21 @@
 
+const root = window.location.pathname;
+
 export default {
   root: {
-    path: '/',
+    path: root,
     text: 'Acerca de mí'
   },
   tech: {
-    path: '/technologies',
+    path: `${root}technologies`,
     text: 'Tecnologías'
   },
   portFolio: {
-    path: '/portfolio',
+    path: `${root}portfolio`,
     text: 'Experiencia profesional'
   },
   api: {
-    portfolioList: '/resource/portfolio.json',
-    techList: '/resource/technologies.json'
+    portfolioList: `${root}resource/portfolio.json`,
+    techList: `${root}resource/technologies.json`,
   }
 };
