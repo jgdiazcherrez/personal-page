@@ -3,7 +3,7 @@
     "id": 1,
     "name": "El Español",
     "position": "Team Leader/Software Engineer",
-    "image": "/img/company/ElEspanol.jpg",
+    "image": "./img/company/ElEspanol.jpg",
     "url": "https://www.elespanol.com",
     "shortDescription": ""
   },
