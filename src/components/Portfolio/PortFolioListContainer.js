@@ -7,43 +7,18 @@ import styled from 'styled-components';
 import Typography from '@material-ui/core/Typography';
 import { fetchListAction } from '../../actions/portfolio';
 import portFolioSelector from '../../selectors/portfolio';
+import useStyles from './stylePortFolioContainer';
 
 
-const styleContainerPorfolio = {
-  display: 'inline-block',
-  flexDirection: 'row',
-  margin: '29px',
-  cursor: 'pointer'
-};
-const imgStyle = {
-  width: '330px',
-  margin: 'auto',
-  height: '293px',
-  border: '1px solid black',
-  borderRadius: '5px'
-};
+// const Anchor = styled.a`
+//     text-decoration: none;
 
-const fadeOut = {
-  visibility: 'hidden',
-  opacity: 0,
-  transition: 'visibility 0s linear 300ms, opacity 300ms'
-};
+//     &:focus, &:hover, &:visited, &:link, &:active {
+//         text-decoration: none;
+//          color: black
+//     }
 
-const fadeIn = {
-  visibility: 'hidden',
-  opacity: 1,
-  transition: 'visibility 0s linear 0s, opacity 2s'
-};
-
-const Anchor = styled.a`
-    text-decoration: none;
-
-    &:focus, &:hover, &:visited, &:link, &:active {
-        text-decoration: none;
-         color: black
-    }
-   
-`;
+// `;
 
 const List = () => {
   const { list } = useSelector(portFolioSelector);
@@ -52,21 +27,22 @@ const List = () => {
     // component Did mount
     dispatch(fetchListAction());
   }, []);
+  const classes = useStyles();
 
 
   return (
 
-    <div className={!list.length > 0 ? fadeOut : fadeIn}>
+    <>
 
       {(() => list.map((elem, index) => (
 
-        <Grid item style={styleContainerPorfolio} key={elem.image} className=".m-fadeIn">
+        <Grid item className={classes.styleContainerPorfolio} key={elem.image}>
           <article>
             <div>
               <LazyLoadImage
                 data-id={index}
                 alt={elem.name}
-                style={imgStyle}
+                className={classes.imgStyle}
                 src={elem.image}
               />
             </div>
@@ -80,7 +56,7 @@ const List = () => {
           </article>
         </Grid>
       )))()}
-    </div>
+    </>
 
   );
 };
