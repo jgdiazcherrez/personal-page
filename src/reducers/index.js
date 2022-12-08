@@ -3,7 +3,8 @@ import portfolio from './portfolio';
 import tech from './tech';
 
 const rootReducer = combineReducers({
-  portfolio, tech
+  portfolio,
+  tech
 });
 
 export default rootReducer;

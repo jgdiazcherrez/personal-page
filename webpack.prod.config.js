@@ -1,11 +1,13 @@
 const webpack = require('webpack');
 const WebpackBar = require('webpackbar');
-const WebpackNotifierPlugin = require('webpack-notifier');
 const path = require('path');
-const moduleConfig = require('./module.config');
+const WebpackNotifierPlugin = require('webpack-notifier');
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const commonConfig = require('./common.config');
 
 module.exports = {
-  devtool: '', // Removed dev-tools mapping
   mode: 'production',
   entry: ['./src/index.js'],
   output: {
@@ -13,11 +15,17 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [
+    new CopyPlugin({
+      patterns: [{ from: './src/assets/resource', to: './resource' }]
+    }),
     new WebpackBar(),
-    new WebpackNotifierPlugin()
+    new WebpackNotifierPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
   ],
   performance: {
     hints: false
   },
-  module: moduleConfig
+  ...commonConfig
 };

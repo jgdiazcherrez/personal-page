@@ -1,42 +1,38 @@
 const webpack = require('webpack');
 const path = require('path');
 const WebpackNotifierPlugin = require('webpack-notifier');
-const moduleConfig = require('./module.config');
-
-
-const host = 'localhost';
-const port = 10000;
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const commonConfig = require('./common.config');
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'inline-source-map',
   entry: [
-    `webpack-dev-server/client?http://${host}:${port}`,
-    'webpack/hot/only-dev-server',
+    'webpack-dev-server/client/index.js?hot=true&live-reload=true',
+    'webpack/hot/dev-server.js',
     './src/index.js'
   ],
   output: {
-    // filename: '[name].min.js',
-    filename: './dist/bundle.js',
-    publicPath: `http://${host}:${port}/`
+    filename: 'bundle.js',
+    path: path.join(__dirname, 'dist')
   },
   plugins: [
-    new WebpackNotifierPlugin()
+    new CopyPlugin({
+      patterns: [{ from: './src/assets/resource', to: './resource' }]
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new WebpackNotifierPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
   ],
   devServer: {
-    // contentBase: path.resolve(__dirname, '/'),
-    port,
-    host,
-    overlay: {
-      errors: true,
-      warnings: true
-    },
+    hot: 'only',
+    liveReload: false,
     historyApiFallback: true,
-    hot: true,
-    disableHostCheck: true,
-    stats: {
-      colors: true
+    static: {
+      directory: path.resolve(__dirname)
     }
   },
-  module: moduleConfig
+  ...commonConfig
 };

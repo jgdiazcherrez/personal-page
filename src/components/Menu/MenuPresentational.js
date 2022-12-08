@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Drawer, withStyles } from '@material-ui/core';
+import { Drawer } from '@material-ui/core';
 import { ChevronLeft } from '@material-ui/icons';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -12,24 +13,26 @@ import Typography from '@material-ui/core/Typography';
 import ConfigRoute from '../../ConfigRoute';
 import useStyles from './style';
 
-
 const MenuPresentational = ({ children, title }) => {
   const classes = useStyles();
-
+  const { t, i18n } = useTranslation();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const handleMenurOpen = () => setMenuIsOpen(true);
   const handleMenuClose = () => setMenuIsOpen(false);
 
-  const ref = useRef(null);
-  const handleOutSideEventClick = (event) => ((ref.current
-    && !ref.current.contains(event.target)) ? setMenuIsOpen(false) : null);
+  const onClickHandleSpanishLanguage = () => i18n.changeLanguage('es');
+  const onClickHandleEnglishLanguage = () => i18n.changeLanguage('en');
 
+  const ref = useRef(null);
+  const handleOutSideEventClick = (event) =>
+    ref.current && !ref.current.contains(event.target) ? setMenuIsOpen(false) : null;
 
   // component didmount
   useEffect(() => {
     document.addEventListener('click', handleOutSideEventClick, true);
-    return () => { // componentWillUnMount
+    return () => {
+      // componentWillUnMount
       document.removeEventListener('click', handleOutSideEventClick, true);
     };
   }, []);
@@ -38,15 +41,18 @@ const MenuPresentational = ({ children, title }) => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar className={classes.toolBar}>
-          <IconButton onClick={handleMenurOpen} className={classes.menuButton} color="inherit" aria-label="Menu">
+          <IconButton
+            onClick={handleMenurOpen}
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="Menu"
+          >
             <MenuIcon />
           </IconButton>
           <Typography variant="subtitle1" className={classes.titleMenu} gutterBottom>
             {title}
           </Typography>
         </Toolbar>
-
-
       </AppBar>
       <Drawer
         ref={ref}
@@ -63,13 +69,25 @@ const MenuPresentational = ({ children, title }) => {
         </div>
         <div className={classes.drawerInner}>
           <ListItem button component={Link} to={ConfigRoute.root.path}>
-            <ListItemText primary={ConfigRoute.root.text} />
+            <ListItemText primary={t('aboutMe')} />
           </ListItem>
           <ListItem button component={Link} to={ConfigRoute.tech.path}>
-            <ListItemText primary={ConfigRoute.tech.text} />
+            <ListItemText primary={t('tech')} />
           </ListItem>
           <ListItem button component={Link} to={ConfigRoute.portFolio.path}>
-            <ListItemText primary={ConfigRoute.portFolio.text} />
+            <ListItemText primary={t('experience')} />
+          </ListItem>
+          <ListItem>
+            <span
+              className={[classes.flagLanguage, 'fi fi-us'].join(' ')}
+              onClick={onClickHandleEnglishLanguage}
+              role="presentation"
+            ></span>
+            <span
+              className={[classes.flagLanguage, 'fi fi-es'].join(' ')}
+              onClick={onClickHandleSpanishLanguage}
+              role="presentation"
+            ></span>
           </ListItem>
         </div>
       </Drawer>

@@ -1,4 +1,3 @@
-
 import type from '../constants/actions/tech';
 
 const initialState = () => ({
