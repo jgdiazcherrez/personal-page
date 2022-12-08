@@ -21,6 +21,9 @@ module.exports = {
     new WebpackNotifierPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html'
+    }),
+    new webpack.DefinePlugin({
+      'process.env.PRODUCTION': JSON.stringify(true)
     })
   ],
   performance: {
