@@ -14,7 +14,7 @@ module.exports = {
   ],
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname, 'dist')
+    path: path.join(__dirname, 'docs')
   },
   plugins: [
     new CopyPlugin({
@@ -24,6 +24,9 @@ module.exports = {
     new WebpackNotifierPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html'
+    }),
+    new webpack.DefinePlugin({
+      'process.env.PRODUCTION': JSON.stringify(false)
     })
   ],
   devServer: {

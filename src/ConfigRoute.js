@@ -1,4 +1,7 @@
-const root = '/';
+let root = '/';
+if (process.env.PRODUCTION) {
+  root = '/personal-page/';
+}
 
 export default {
   root: {
