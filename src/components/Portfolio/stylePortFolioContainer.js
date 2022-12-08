@@ -10,10 +10,10 @@ export default makeStyles({
     cursor: 'pointer'
   },
   imgStyle: {
-    width: '330px',
+    width: '205px',
     margin: 'auto',
-    height: '293px',
+    height: '185px',
     border: '1px solid black',
-    borderRadius: '5px'
+    borderRadius: '92px'
   }
 });

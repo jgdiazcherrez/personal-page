@@ -1,4 +1,3 @@
-
 export default {
   FETCH_LIST_PORTFOLIO_REQUEST: 'fetchListPorfolioRequest',
   FETCH_LIST_PORTFOLIO_REQUEST_SUCCESS: 'fecthListPorfolioRequestSuccess',

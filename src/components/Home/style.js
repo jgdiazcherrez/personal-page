@@ -1,4 +1,3 @@
-
 import { makeStyles } from '@material-ui/core/styles';
 import commonStyle from '../style';
 
@@ -11,8 +10,8 @@ export default makeStyles({
     margin: '12px'
   },
   imgProfile: {
-    width: '200px',
-    height: '200px',
+    width: '231px',
+    height: '216px',
     borderRadius: '50%',
     overflow: 'hidden',
     display: 'inline-block',

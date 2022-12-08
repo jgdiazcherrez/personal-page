@@ -1,4 +1,3 @@
-
 import type from '../constants/actions/portfolio';
 
 const initialState = () => ({

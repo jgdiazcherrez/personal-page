@@ -1,4 +1,3 @@
-
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles({
@@ -13,12 +12,18 @@ export default makeStyles({
     marginLeft: -12,
     marginRight: 20
   },
-  toolBar:
-      { display: 'inline-block' },
+  toolBar: { display: 'inline-block' },
   headerBackButton: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
     padding: '0 8px'
+  },
+  flagLanguage: {
+    marginRight: '4px',
+    cursor: 'pointer'
+  },
+  drawerPaper: {
+    top: '8px'
   }
 });

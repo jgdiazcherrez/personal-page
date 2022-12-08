@@ -1,41 +1,49 @@
 [
   {
     "id": 1,
-    "name": "El Español",
-    "position": "Team Leader/Software Engineer",
-    "image": "./img/company/ElEspanol.jpg",
+    "name": "Sngular",
+    "position": "Senior Full Stack Developer",
+    "image": "sngular.png",
     "url": "https://www.elespanol.com",
     "shortDescription": ""
   },
   {
     "id": 2,
-    "name": "El Confidencial",
-    "position": "Full Stack Developer",
-    "image": "./img/company/ElConfidencial.jpg",
+    "name": "El Español",
+    "position": "Team Leader/Software Engineer",
+    "image": "ElEspanol.jpg",
     "url": "https://www.elespanol.com",
     "shortDescription": ""
   },
   {
     "id": 3,
-    "name": "Freelance/ThinkingSize",
+    "name": "El Confidencial",
     "position": "Full Stack Developer",
-    "image": "./img/company/tkz.jpg",
-    "url": "#",
-    "shortDescription": ""
-  },
-  {
-    "id": 4,
-    "name": "El Español",
-    "position": "Full Stack Developer",
-    "image": "./img/company/ElEspanol_2.jpg",
+    "image": "ElConfidencial.jpg",
     "url": "https://www.elespanol.com",
     "shortDescription": ""
   },
   {
+    "id": 4,
+    "name": "Freelance/ThinkingSize",
+    "position": "Full Stack Developer",
+    "image": "tkz.jpg",
+    "url": "#",
+    "shortDescription": ""
+  },
+  {
     "id": 5,
+    "name": "El Español",
+    "position": "Full Stack Developer",
+    "image": "ElEspanol_2.jpg",
+    "url": "https://www.elespanol.com",
+    "shortDescription": ""
+  },
+  {
+    "id": 6,
     "name": "Alten/Prisa",
     "position": "Developer",
-    "image": "./img/company/Alten_Prisa.jpg",
+    "image": "Alten_Prisa.jpg",
     "url": "https://www.alten.es",
     "shortDescription": ""
   }

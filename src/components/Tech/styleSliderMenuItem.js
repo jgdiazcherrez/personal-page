@@ -1,4 +1,3 @@
-
 import { makeStyles } from '@material-ui/core/styles';
 import commonStyle from '../style';
 
@@ -11,8 +10,8 @@ export default makeStyles({
     cursor: 'none',
     border: 'none',
     '& img': {
-      width: '250px',
-      height: '150px'
+      width: '177px',
+      height: '103px'
     }
   }
 });
