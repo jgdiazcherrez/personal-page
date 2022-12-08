@@ -1,6 +1,6 @@
 let root = '/';
 if (process.env.PRODUCTION) {
-  root = '/docs/';
+  root = '/personal-page/';
 }
 
 export default {
