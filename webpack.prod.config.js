@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const WebpackBar = require('webpackbar');
 const path = require('path');
 const WebpackNotifierPlugin = require('webpack-notifier');
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const commonConfig = require('./common.config');
@@ -12,7 +11,7 @@ module.exports = {
   entry: ['./src/index.js'],
   output: {
     filename: 'bundle.min.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'docs')
   },
   plugins: [
     new CopyPlugin({
