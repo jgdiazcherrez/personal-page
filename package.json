@@ -4,8 +4,8 @@
   "description": "An App created with React & Redux, just like an example. It shows my skills as Software Engineer",
   "main": "index.js",
   "scripts": {
-    "start": "vite serve",
-    "build": "vite build",
+    "start": "vite serve -c ./vite.config.dev.js",
+    "build": "vite build -c ./vite.config.prod.js",
     "prepare": "husky",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",

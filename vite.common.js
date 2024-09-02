@@ -1,13 +1,13 @@
-import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import image from '@rollup/plugin-image';
 import path from 'path';
 
 const sourceJSPattern = /\/src\/.*\.js$/;
+const baseProject = '/personal-page/';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default {
   root: 'src',
   resolve: {
     alias: {
@@ -24,11 +24,7 @@ export default defineConfig({
       template: 'index.html'
     })
   ],
-  define: {
-    'process.env': {
-      PRODUCTION: JSON.stringify(false)
-    }
-  },
+
   optimizeDeps: {
     esbuildOptions: {
       loader: {
@@ -40,9 +36,11 @@ export default defineConfig({
     outDir: '../docs',
     emptyOutDir: true // also necessary
   },
+
   esbuild: {
     loader: 'jsx',
     include: [sourceJSPattern],
     exclude: []
-  }
-});
+  },
+  base: baseProject
+};

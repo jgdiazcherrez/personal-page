@@ -24,7 +24,7 @@ function App() {
   return (
     <Provider store={store}>
       <MuiThemeProvider theme={theme}>
-        <Router>
+        <Router basename={process.env.BASENAME}>
           <Switch>
             <Route exact path={ConfigRoute.root.path} render={() => <HomePresentational />} />
             <Route

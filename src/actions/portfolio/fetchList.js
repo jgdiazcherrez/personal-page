@@ -1,33 +1,26 @@
 import ACTION from '../../constants/actions/portfolio';
-import ConfigRoute from '../../ConfigRoute';
+import fetchData from '../../assets/resource/portfolio.json';
 
-
-const fetchListRequest = () => (
-  {
-    type: ACTION.FETCH_LIST_PORTFOLIO_REQUEST,
-    list: []
-  }
-);
+const fetchListRequest = () => ({
+  type: ACTION.FETCH_LIST_PORTFOLIO_REQUEST,
+  list: []
+});
 
 const fetListRequestSuccess = (data) => ({
   type: ACTION.FETCH_LIST_PORTFOLIO_REQUEST_SUCCESS,
   list: data
 });
 
-const fetchListRequestError = (message) => (
-  {
-    type: ACTION.FETCH_LIST_PORTFOLIO_REQUEST_ERROR,
-    message
-  }
-);
-
+const fetchListRequestError = (message) => ({
+  type: ACTION.FETCH_LIST_PORTFOLIO_REQUEST_ERROR,
+  message
+});
 
 export const fetchListAction = () => async (dispatch) => {
   dispatch(fetchListRequest());
-  fetch(ConfigRoute.api.portfolioList)
-    .then((response) => response.json())
-    .then((data) => dispatch(fetListRequestSuccess(data)))
-    .catch((error) => dispatch(fetchListRequestError(error)));
+  setTimeout(() => {
+    dispatch(fetListRequestSuccess(fetchData));
+  }, 0);
 };
 
 export default fetchListAction;

@@ -1,4 +1,9 @@
 const root = '/';
+console.log(process.env);
+if (process.env.PRODUCTION) {
+  // root = '/';
+}
+
 export default {
   root: {
     path: root
@@ -8,9 +13,6 @@ export default {
   },
   portFolio: {
     path: `${root}experience`
-  },
-  api: {
-    portfolioList: new URL(`./assets/resource/portfolio.json`, import.meta.url).href,
-    techList: new URL(`./assets/resource/technologies.json`, import.meta.url).href
   }
 };
+export const mainRootPath = root;
