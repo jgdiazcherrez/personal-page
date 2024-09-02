@@ -5,8 +5,9 @@ import Typography from '@material-ui/core/Typography';
 import Menu from '../Menu/MenuPresentational';
 import useStyles from './style';
 import SocialPresentational from '../Social/SocialPresentational';
+import profile from '@/assets/img/profile.jpeg';
 
-const HomePresentational = () => {
+function HomePresentational() {
   const classes = useStyles();
   const { t } = useTranslation();
 
@@ -19,11 +20,7 @@ const HomePresentational = () => {
               <Typography component="h1" variant="h2" gutterBottom className={classes.title}>
                 {t('name')}
               </Typography>
-              <img
-                src={require('@/assets/img/profile.jpeg')}
-                className={classes.imgProfile}
-                alt="me"
-              />
+              <img className={classes.imgProfile} alt="me" src={profile} />
               <Typography variant="h6" gutterBottom>
                 {t('jobTitleHome')}
               </Typography>
@@ -40,6 +37,6 @@ const HomePresentational = () => {
       </div>
     </Menu>
   );
-};
+}
 
 export default HomePresentational;

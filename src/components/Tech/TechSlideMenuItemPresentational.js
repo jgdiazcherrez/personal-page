@@ -1,7 +1,7 @@
 import React from 'react';
 import useStyles from './styleSliderMenuItem';
 
-const ChildrenMenuItem = ({ srcImage, url }) => {
+function ChildrenMenuItem({ srcImage, url }) {
   if (!url) {
     return <img src={srcImage} alt="img-item" />;
   }
@@ -10,18 +10,20 @@ const ChildrenMenuItem = ({ srcImage, url }) => {
       <img src={srcImage} alt="img-item" />
     </a>
   );
-};
+}
 
-const MenuItem = ({ srcImage, url }) => {
+function MenuItem({ srcImage, url }) {
   const classes = useStyles();
   return (
     <div className={classes.menuItem}>
       <ChildrenMenuItem srcImage={srcImage} url={url} />
     </div>
   );
-};
+}
 
-const Arrow = ({ text, className }) => <div className={className}>{text}</div>;
+function Arrow({ text, className }) {
+  return <div className={className}>{text}</div>;
+}
 
 const MenuScroll = (list, selected) =>
   list.map((el, index) => {

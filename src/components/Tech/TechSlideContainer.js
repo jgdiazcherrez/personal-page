@@ -6,14 +6,10 @@ import ScrollMenu from 'react-horizontal-scrolling-menu';
 import { fetchTechListAction } from '../../actions/tech';
 import techSelector from '../../selectors/tech';
 import useStyles from './styleSlider';
-import {
-  MenuScroll,
-  ArrowLeft,
-  ArrowRight
-} from './TechSlideMenuItemPresentational';
+import { MenuScroll, ArrowLeft, ArrowRight } from './TechSlideMenuItemPresentational';
 import './styleMenu.css';
 
-const TechSlide = () => {
+function TechSlide() {
   const { list } = useSelector(techSelector);
   const dispatch = useDispatch();
   const classes = useStyles();
@@ -32,11 +28,11 @@ const TechSlide = () => {
           const images = [];
           elem.items.forEach((item) => {
             const img = document.createElement('img');
-            img.src = require(`@/assets/${item.image}`);
-            images.push({
-              url: item.url,
-              image: img.src
-            });
+            (img.src = new URL(`../../assets/${item.image}`, import.meta.url).href),
+              images.push({
+                url: item.url,
+                image: img.src
+              });
           });
           const totalItemMenu = MenuScroll(images, selected);
 
@@ -58,6 +54,6 @@ const TechSlide = () => {
         }))()}
     </div>
   );
-};
+}
 
 export default TechSlide;

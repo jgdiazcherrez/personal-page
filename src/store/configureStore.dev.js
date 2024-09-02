@@ -14,12 +14,6 @@ export default function configureStore() {
   const store = createDevStoreWithMiddleware(StockApp);
 
   // enable webpack hot module replacement for reducers
-  if (module.hot) {
-    module.hot.accept('../reducers', () => {
-      const nextRootReducer = require('../reducers');
-      store.replaceReducer(nextRootReducer);
-    });
-  }
 
   return store;
 }

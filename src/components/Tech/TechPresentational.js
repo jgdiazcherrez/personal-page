@@ -6,7 +6,7 @@ import Menu from '../Menu/MenuPresentational';
 import useStyles from './style';
 import TechSlideContainer from './TechSlideContainer';
 
-const TechIndex = () => {
+function TechIndex() {
   const classes = useStyles();
   const { t } = useTranslation();
 
@@ -27,6 +27,6 @@ const TechIndex = () => {
       </div>
     </Menu>
   );
-};
+}
 
 export default TechIndex;

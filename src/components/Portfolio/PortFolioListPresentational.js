@@ -1,12 +1,12 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import { useTranslation } from 'react-i18next';
 import Menu from '../Menu/MenuPresentational';
 import useStyles from './style';
 import PortFolioListContainer from './PortFolioListContainer';
-import { useTranslation } from 'react-i18next';
 
-const PortFolioListPresentational = () => {
+function PortFolioListPresentational() {
   const classes = useStyles();
   const { t } = useTranslation();
 
@@ -27,6 +27,6 @@ const PortFolioListPresentational = () => {
       </div>
     </Menu>
   );
-};
+}
 
 export default PortFolioListPresentational;

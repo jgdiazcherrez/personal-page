@@ -7,7 +7,7 @@ import { fetchListAction } from '../../actions/portfolio';
 import portFolioSelector from '../../selectors/portfolio';
 import useStyles from './stylePortFolioContainer';
 
-const List = () => {
+function List() {
   const { list } = useSelector(portFolioSelector);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -27,7 +27,7 @@ const List = () => {
                   data-id={index}
                   alt={elem.name}
                   className={classes.imgStyle}
-                  src={require(`@/assets/img/company/${elem.image}`)}
+                  src={new URL(`../../assets/img/company/${elem.image}`, import.meta.url).href}
                 />
               </div>
               <div>
@@ -48,6 +48,6 @@ const List = () => {
         )))()}
     </>
   );
-};
+}
 
 export default List;

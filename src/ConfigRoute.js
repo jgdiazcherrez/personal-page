@@ -1,8 +1,4 @@
-let root = '/';
-if (process.env.PRODUCTION) {
-  root = '/personal-page/';
-}
-
+const root = '/';
 export default {
   root: {
     path: root
@@ -14,7 +10,7 @@ export default {
     path: `${root}experience`
   },
   api: {
-    portfolioList: `${root}resource/portfolio.json`,
-    techList: `${root}resource/technologies.json`
+    portfolioList: new URL(`./assets/resource/portfolio.json`, import.meta.url).href,
+    techList: new URL(`./assets/resource/technologies.json`, import.meta.url).href
   }
 };
