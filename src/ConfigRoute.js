@@ -1,8 +1,4 @@
 const root = '/';
-console.log(process.env);
-if (process.env.PRODUCTION) {
-  // root = '/';
-}
 
 export default {
   root: {

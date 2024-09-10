@@ -3,4 +3,8 @@ node_modules/
 dist
 !dist/e3db1b5f8a2ec8ae8764.svg
 !dist/d8b63826d8d60830324e.svg
-
+.env
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

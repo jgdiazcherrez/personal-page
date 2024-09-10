@@ -2,11 +2,14 @@ import react from '@vitejs/plugin-react';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import image from '@rollup/plugin-image';
 import path from 'path';
+import { config } from 'dotenv';
+
+config();
 
 const sourceJSPattern = /\/src\/.*\.js$/;
-const baseProject = '/personal-page/';
+const baseProject = process.env.BASE_PROJECT || '/personal-page/';
+const distFolderProject = process.env.DIST_FOLDER || 'docs';
 
-// https://vitejs.dev/config/
 export default {
   root: 'src',
   resolve: {
@@ -33,10 +36,9 @@ export default {
     }
   },
   build: {
-    outDir: '../docs',
-    emptyOutDir: true // also necessary
+    outDir: `../${distFolderProject}`,
+    emptyOutDir: true
   },
-
   esbuild: {
     loader: 'jsx',
     include: [sourceJSPattern],

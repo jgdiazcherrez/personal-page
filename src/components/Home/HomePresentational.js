@@ -17,7 +17,13 @@ function HomePresentational() {
         <Grid container className={classes.container}>
           <Grid item xs={12}>
             <section spacing={3}>
-              <Typography component="h1" variant="h2" gutterBottom className={classes.title}>
+              <Typography
+                component="h1"
+                variant="h2"
+                gutterBottom
+                className={classes.title}
+                id="mainTitle"
+              >
                 {t('name')}
               </Typography>
               <img className={classes.imgProfile} alt="me" src={profile} />

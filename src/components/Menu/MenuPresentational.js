@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import ConfigRoute from '../../ConfigRoute';
 import useStyles from './style';
 
-const MenuPresentational = ({ children, title }) => {
+function MenuPresentational({ children, title }) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -49,7 +49,12 @@ const MenuPresentational = ({ children, title }) => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="subtitle1" className={classes.titleMenu} gutterBottom>
+          <Typography
+            variant="subtitle1"
+            className={classes.titleMenu}
+            gutterBottom
+            id="headerTitle"
+          >
             {title}
           </Typography>
         </Toolbar>
@@ -82,18 +87,18 @@ const MenuPresentational = ({ children, title }) => {
               className={[classes.flagLanguage, 'fi fi-us'].join(' ')}
               onClick={onClickHandleEnglishLanguage}
               role="presentation"
-            ></span>
+            />
             <span
               className={[classes.flagLanguage, 'fi fi-es'].join(' ')}
               onClick={onClickHandleSpanishLanguage}
               role="presentation"
-            ></span>
+            />
           </ListItem>
         </div>
       </Drawer>
       {children}
     </div>
   );
-};
+}
 
 export default MenuPresentational;
